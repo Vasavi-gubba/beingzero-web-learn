@@ -1,0 +1,26 @@
+#id1 {
+    color: white;
+    text-align: center;
+    width: 300px;
+    border: 15px;
+    padding: 50px;
+    margin: 20px;
+    margin-top: 55px;
+    margin-left: 550px;
+    background: rgb(0,0,255);
+  }
+  #id2 {
+    display: flex;
+    padding-top: 40px;
+    padding-left: 500px;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+  body {
+    background: white;
+  }
+  header {
+    text-align: center;
+    color: black;
+    padding: 20px;
+  }
