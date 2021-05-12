@@ -11,18 +11,23 @@
     <h1 id="id3">Color-Picker</h1>
 </header>
 <body>
-    <div id="id1">
-        <p>rgb(0,0,255)</p>
-</div>
+    <p id="pColor">Show Color </p>
+    <p><input type="range" oninput="onColorRangeChange()" min="0" max="255" step="1" value="1" id="redSlider">Red Color</p>
+    <p><input type="range" oninput="onColorRangeChange()" min="0" max="255" step="1" value="1" id="greenSlider">Green Color</p>
+    <p><input type="range" oninput="onColorRangeChange()" min="0" max="255" step="1" value="1" id="blueSlider">Blue Color</p>
 
-    <div id="id2">
-        <label for="red">Red</label>
-        <input type="range" name="red" id="red" min="0" max="255" step="1">
-        <label for="green">Green</label>
-        <input type="range" name="green" id="green" min="0" max="255" step="1">
-        <label for="blue">Blue</label>
-        <input type="range" name="blue" id="blue" min="0" max="255" step="1">
-    </div>
-    <!-- <script src="../js/site.js"></script> -->
+    <script>
+        function onColorRangeChange(){
+            let p=document.getElementById("pColor");
+            let r=document.getElementById("redSlider");
+            let g=document.getElementById("greenSlider");
+            let b=document.getElementById("blueSlider");
+             
+            let rgbprop= "rgb("+r.value+","+g.value +","+b.value+")";
+            p.innerHTML = rgbprop;
+            p.style.backgroundColor = rgbprop;
+
+        }
+    </script>
 </body>
 </html>
