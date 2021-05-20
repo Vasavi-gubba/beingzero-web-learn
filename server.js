@@ -1,16 +1,12 @@
 const express = require('express');
 const app = express();
-const mongoose =require('mongoose');
+const dbconnectlib=require('./backend/lib/dbconnectlib');
+const config = require('./backend/config/config');
 const Table = require('./frontend/js/Table');
  
 app.use(express.static(__dirname+"/frontend"));
 
-var password=process.env.Mongo_atlas_password;
-var connectionString ="mongodb+srv://vasavigubba:"+password+"@cluster0.vqm9x.mongodb.net/crud?retryWrites=true&w=majority";
-mongoose.connect(connectionString,{});
-mongoose.connection.on('connected',function(){
-    console.log("Database Connected");
-});
+dbconnectlib.connect();
 app.get("/", function(req, res){
     res.send("Welcome to My Basic Site");
 })
